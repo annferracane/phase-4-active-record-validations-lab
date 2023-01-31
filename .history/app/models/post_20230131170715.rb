@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
 
     def title_sufficient
-        valid = ["Won't Believe", "Secret", "Top", "Guess"].any? { |phrase| title.to_s.include? (phrase) } 
+        valid = ["Won't Believe", "Secret", "Top", "Guess"].any? { |phrase| title.include? (phrase) } 
         unless valid
             errors.add(:title, "Title must be more click-baity!")
         end 
